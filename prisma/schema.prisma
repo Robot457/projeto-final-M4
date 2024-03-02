@@ -1,8 +1,116 @@
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+model Book {
+    id        String   @id @default(uuid())
+    title     String
+    author    String
+    genre     Genre    @relation(fields: [genreId], references: [id])
+    yearOfPub Int
+    sinopsis  String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    genreId   String
+
+    Comment         Comment[]
+    Favorite        Favorite[]
+    Recommendation  Recommendation[]
+    Assessment      Assessment[]
+    Reading_History Reading_History[]
+}
+
+model Genre {
+    id        String   @id @default(uuid())
+    name      String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    Book      Book[]
+}
+
+model User {
+    id              String            @id @default(uuid())
+    name            String
+    email           String            @unique
+    password        String
+    urlPhoto        String
+    createdAt       DateTime          @default(now())
+    updatedAt       DateTime          @updatedAt
+    Comment         Comment[]
+    Favorite        Favorite[]
+    Recommendation  Recommendation[]
+    Assessment      Assessment[]
+    Reading_History Reading_History[]
+}
+
+model Comment {
+    id      String @id @default(uuid())
+    content String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    book   Book   @relation(fields: [bookId], references: [id])
+    bookId String
+    user   User   @relation(fields: [userId], references: [id])
+    userId String
+}
+
+model Favorite {
+    id String @id @default(uuid())
+
+    book   Book   @relation(fields: [bookId], references: [id])
+    bookId String
+
+    user   User   @relation(fields: [userId], references: [id])
+    userId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Recommendation {
+    id     String @id @default(uuid())
+    book   Book   @relation(fields: [bookId], references: [id])
+    bookId String
+
+    user   User   @relation(fields: [userId], references: [id])
+    userId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Assessment {
+    id     String @id @default(uuid())
+    book   Book   @relation(fields: [bookId], references: [id])
+    bookId String
+
+    user   User   @relation(fields: [userId], references: [id])
+    userId String
+
+    grade     Int
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Reading_History {
+    id     String @id @default(uuid())
+    book   Book   @relation(fields: [bookId], references: [id])
+    bookId String
+
+    user   User   @relation(fields: [userId], references: [id])
+    userId String
+
+    startDate DateTime
+    endDate   DateTime
+    status    String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
