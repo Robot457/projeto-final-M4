@@ -46,3 +46,7 @@ Crie um arquivo `.env` na raiz do projeto e adicione as variáveis que estão no
 ## Lint e formatação
 
 Este projeto utiliza o ESLint e o Prettier para padronização de código.
+
+## Endpoints
+
+Acesse o arquivo `client.http` para visualizar os endpoints disponíveis e testá-los.
