@@ -1,34 +1,28 @@
 GET http://localhost:7000/api/livros HTTP/1.1
 
-
-
 ###
-
 POST http://localhost:7000/api/livros HTTP/1.1
 content-type: application/json
 
 {
-  "title": "Uma noite escura 2",
-  "author": "Johnson",
+  "title": "O Senhor dos Anéis",
+  "author": "J. R. R. Tolkien",
   "genreId": "026297d8-df90-4c08-ba4c-1466c6d405f9",
-  "yearOfPub": 1998,
-  "sinopsis": "Em outra noite..."
+  "yearOfPub": 1937,
+  "sinopsis": "O Senhor dos Anéis (The Lord of the Rings, no original) é um livro de alta fantasia, escrito pelo escritor britânico J. R. R. Tolkien. Escrita entre 1937 e 1949, com muitas partes criadas durante a Segunda Guerra Mundial, a saga é uma continuação de O Hobbit (1937)."
 }
 
-
 @bookId = 583dacf7-117b-4423-8e87-3137cfb57370
+
 ###
 GET http://localhost:7000/api/livros/{{bookId}} HTTP/1.1
 
-
-
 ###
-
 PATCH  http://localhost:7000/api/livros/{{bookId}} HTTP/1.1
 content-type: application/json
 
 {
-  "title": "Uma noite escura 2 Update"
+  "title": "O Senhor dos Anéis Updated",
 }
 
 ###
