@@ -1,0 +1,35 @@
+GET http://localhost:7000/api/livros HTTP/1.1
+
+
+
+###
+
+POST http://localhost:7000/api/livros HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Uma noite escura 2",
+  "author": "Johnson",
+  "genreId": "026297d8-df90-4c08-ba4c-1466c6d405f9",
+  "yearOfPub": 1998,
+  "sinopsis": "Em outra noite..."
+}
+
+
+@bookId = 583dacf7-117b-4423-8e87-3137cfb57370
+###
+GET http://localhost:7000/api/livros/{{bookId}} HTTP/1.1
+
+
+
+###
+
+PATCH  http://localhost:7000/api/livros/{{bookId}} HTTP/1.1
+content-type: application/json
+
+{
+  "title": "Uma noite escura 2 Update"
+}
+
+###
+DELETE  http://localhost:7000/api/livros/{{bookId}} HTTP/1.1
