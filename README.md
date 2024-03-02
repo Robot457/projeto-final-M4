@@ -49,4 +49,4 @@ Este projeto utiliza o ESLint e o Prettier para padronização de código.
 
 ## Endpoints
 
-Acesse o arquivo `client.http` para visualizar os endpoints disponíveis e testá-los.
+Todos os endpoints e chamadas podem ser encontrados  na pasta `http` na raiz do projeto.
