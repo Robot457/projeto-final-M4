@@ -6,6 +6,7 @@ import cors from 'cors'
 
 import { router as booksRouter } from './routes/books.router.js'
 import { router as usersRouter } from './routes/users.router.js'
+import { router as commentsRouter } from './routes/comments.router.js'
 import { createGenres } from './database/prisma-client.js'
 
 const app = express()
@@ -16,6 +17,7 @@ app.use(express.json())
 
 app.use(booksRouter)
 app.use(usersRouter)
+app.use(commentsRouter)
 
 const port = process.env.PORT || 7000
 
