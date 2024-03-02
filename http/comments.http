@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:7000/api/comentarios
+@userId = b87b4bdb-eda6-429f-ac37-4763f4f1fdab
+@bookId = afe5af18-e77d-4186-9e17-74c62e16c829
+@commentId= 0e51dc8e-6b9f-46b7-9557-408ae2fda293
+
+POST {{baseUrl}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "content": "O livro dos Senhores dos Anéis é muito bom! Recomendo!",
+    "bookId": "afe5af18-e77d-4186-9e17-74c62e16c829",
+    "userId": "b87b4bdb-eda6-429f-ac37-4763f4f1fdab"
+}
+
+###
+GET {{baseUrl}}/{{commentId}} HTTP/1.1
+
+###
+GET {{baseUrl}}/livro/{{bookId}} HTTP/1.1
+
+###
+GET {{baseUrl}}/usuario/{{userId}} HTTP/1.1
+
+
+###
+PATCH  {{baseUrl}}/{{commentId}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "content": "O livro dos Senhores dos Anéis é muito bom! Recomendo! Muito bom mesmo!"
+}
+
+###
+DELETE {{baseUrl}}/{{commentId}} HTTP/1.1
