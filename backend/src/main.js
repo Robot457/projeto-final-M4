@@ -7,7 +7,7 @@ import cors from 'cors'
 import { router as booksRouter } from './routes/books.router.js'
 import { router as usersRouter } from './routes/users.router.js'
 import { router as commentsRouter } from './routes/comments.router.js'
-import { createGenres } from './database/prisma-client.js'
+import { createGenres, createBooks } from './database/scripts.js'
 
 const app = express()
 
@@ -26,6 +26,7 @@ if (!port) {
 }
 
 createGenres()
+createBooks()
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
