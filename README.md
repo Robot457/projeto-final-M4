@@ -13,7 +13,7 @@ Tem um caráter educacional e social para que as pessoas possam ter acesso a liv
 - SQLite
 - Prisma
 
-## Instalação
+## Setup
 
 antes de tudo, é necessário ter o **PNPM** instalado, para isso, execute o comando:
 
@@ -21,18 +21,58 @@ antes de tudo, é necessário ter o **PNPM** instalado, para isso, execute o com
 npm install -g pnpm
 ```
 
+## Backend
+
+Para executar o backend, vá até a pasta `backend`.
+
+### Instalação
+
 Após isso, execute o comando:
 
 ```bash
 pnpm install
+
+ou 
+
+npm install
 ```
 
-## Execução
+### Execução
 
 Para executar o projeto, execute o comando:
 
 ```bash
 pnpm dev
+
+ou
+
+npm run dev
+```
+
+## Frontend
+
+### Instalação
+
+Para instalar as dependências do frontend, vá até a pasta `frontend` e execute o comando:
+
+```bash
+pnpm install
+
+ou
+
+npm install
+```
+
+### Execução
+
+Para executar o projeto, execute o comando:
+
+```bash
+pnpm dev
+
+ou
+
+npm run dev
 ```
 
 ## Modelagem
@@ -41,7 +81,7 @@ Para criar a modelagem do banco de dados, vá até o arquivo `prisma/schema.pris
 
 ## Variáveis de ambiente
 
-Crie um arquivo `.env` na raiz do projeto e adicione as variáveis que estão no arquivo `.env.example`.
+Crie um arquivo `.env` na raiz do projeto e adicione as variáveis que estão no arquivo `.env.example`. É só copiar e colar.
 
 ## Lint e formatação
 
