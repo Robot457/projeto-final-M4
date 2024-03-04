@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/main.js"
+    "dev": "npx prisma generate && nodemon ./src/main.js"
   },
   "keywords": [],
   "author": "",
