@@ -1,1 +1,1 @@
-export const BASE_API = 'http://localhost:7000/api';
+export const BASE_API = 'https://projeto-final-m4-osbw.onrender.com/api';
